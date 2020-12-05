@@ -50,13 +50,26 @@ activeOptions();
 
 const closeAdd = () => {
   const add = document.querySelector('.add');
-  console.log(add);
   add.addEventListener('click', (e) => {
     if(e.target.closest('.add__decline')){
       add.style.display = 'none';
     }
   });
-
-
 };
 closeAdd();
+
+const status = () => {
+  const sum = document.getElementById('sum'),
+        line = document.querySelector('.user__options__line'),
+        statusLine = document.querySelector('.user__options__line-status');   
+  function longLIne(){
+    let a = line.clientWidth,
+        b = a/100,
+        result = 100 - Math.floor(+sum.textContent/b);
+
+    statusLine.style.width = `${result}%`;
+  }
+  longLIne();
+};
+status();
+
