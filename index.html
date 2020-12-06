@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CASHUBACK</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="script.js" defer></script>
 </head>
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="css/style.css">
-<script src="script.js" defer></script>
 <body>
   <header class="header">
     <div class="container">
@@ -31,9 +31,9 @@
         <div class="header__top__user-info">
           <span class="header__top__user-sum">  <b>142 BYN</b> / 40 BYN</span>
           <div class="header__top__user-block">
-            <span class="header__top__user-like"><img src="img/heart.svg" alt="image: heart"></span>
-            <span class="header__top__user-notification"><img src="img/bell.svg" alt="image: bell"></span>
-            <span class="header__top__user-foto"><img src="img/avatar.png" alt="image: avatar"></span>
+            <a  class="header__top__user-like"><img src="img/heart.svg" alt="image: heart"></a>
+            <a  class="header__top__user-notification"><img src="img/bell.svg" alt="image: bell"></a>
+            <a href="" class="header__top__user-foto"><img src="img/avatar.png" alt="image: avatar"></a>
           </div>
         </div>
       </div>
@@ -48,7 +48,7 @@
           <a href="" class="header__bottom__nav-link">Все Магазины</a>
           <a href="" class="header__bottom__nav-link">С повышенным кэшбэком</a>
           <a href="" class="header__bottom__nav-link">Приведи друга</a>
-          <a href="#" class="header__bottom__nav-upcash">Увеличь кэшбэк</a>
+          <a href="" class="header__bottom__nav-upcash">Увеличь кэшбэк</a>
         </nav>
 
       </div>
@@ -59,7 +59,7 @@
   <section class="add">
     <div class="container add-container">
     <img class="add__image" src="img/rrb-card.png" alt="image: rrb-card">
-    <div class="add__text" ><span class="add__text-top">Получай кэшбэк сразу на карту!</span class="add__text-bottom"> <span> Кобренд–карта РРБ Банка поможет удобно получать кэшбэк.</span></div>
+    <div class="add__text"><span class="add__text-top">Получай кэшбэк сразу на карту!</span > <span class="add__text-bottom"> Кобренд–карта РРБ Банка поможет удобно получать кэшбэк.</span></div>
     <button class="button add__button">Хочу карту</button>
     <img class="add__decline" src="img/decline.svg" alt="icon: decline">
     </div>
@@ -76,7 +76,7 @@
             <img class="breadcrumb-list__arrow" src="img/arrow-right.png" alt="icon:right">
           </li>
           <li class="breadcrumb-list__item">
-            <a href="#" class="breadcrumb-list__link">Вывод средств</a>
+            <a class="breadcrumb-list__link">Вывод средств</a>
   
           </li>
         </ul>
@@ -96,7 +96,7 @@
             <div class="user__options__line">
               <div class="user__options__line-status"></div>
             </div>
-            <div class="user__options__status-to">До статуса Expert: <strong ><span id="sum">20</span> BYN</strong></div>
+            <div class="user__options__status-to">До статуса Expert: <span class="black" ><span id="sum">20</span> BYN</span></div>
             <div class="user__options__line-beetwen"></div>
             <ul class="user__options__list">
               <li class="user__options__item"><a  class="user__options__item-link" href=""><img class="user__options__item-image" src="img/user/profile.svg" alt="icon:..">Мой кабинет</a></li>
@@ -104,7 +104,7 @@
               <li class="user__options__item"><a  class="user__options__item-link" href=""><img class="user__options__item-image" src="img/user/creditcard.svg" alt="icon:..">Карты</a></li>
               <li class="user__options__item"><a  class="user__options__item-link" href=""><img class="user__options__item-image" src="img/user/selected.svg" alt="icon:..">Вывод средств</a></li>
               <li class="user__options__item"><a  class="user__options__item-link" href=""><img class="user__options__item-image" src="img/user/null.svg" alt="icon:..">Приведи друга<span class="user__options__item-frieds black"><b>2</b></span></a></li>
-                <div class="user__options__line-beetwen"></div>
+                <li class="user__options__line-beetwen"> </li>
               <li class="user__options__item"><a  class="user__options__item-link" href=""><img class="user__options__item-image" src="img/user/options.svg" alt="icon:..">Настройки</a></li>
               <li class="user__options__item"><a  class="user__options__item-link" href=""><img class="user__options__item-image" src="img/user/help.svg" alt="icon:..">Помощь</a></li>
               <li class="user__options__item"><a  class="user__options__item-link" href=""><img class="user__options__item-image" src="img/user/share.svg" alt="icon:..">Выход</a></li>
@@ -162,19 +162,19 @@
                <h2 class="user__form__title">
                  Вывод средств
                </h2>
-               <form action="">
+               <form action="POST">
                  <div class="user__form__input-name">Выберите карту</div>
                  <div class="user__form__input-wrapper" >
-                   <input class="user__form__input user__form__input-card"type="text" placeholder="Номер карты">
-                   <img class="user__form__input-image"src="img/user/creditcard.svg" alt="icon: creditcard">
+                   <input class="user__form__input user__form__input-card" type="text" placeholder="Номер карты">
+                   <img class="user__form__input-image" src="img/user/creditcard.svg" alt="icon: creditcard">
                   </div>
                  <div class="user__form__input-name">Имя</div>
-                 <div class="user__form__input-wrapper"><input class="user__form__input"type="text" placeholder="Имя"></div>
+                 <div class="user__form__input-wrapper"><input class="user__form__input" type="text" placeholder="Имя"></div>
                  <div class="user__form__input-name">Фамилия</div>
-                 <div  class="user__form__input-wrapper"><input class="user__form__input"type="text" placeholder="Фамилия"></div>
+                 <div  class="user__form__input-wrapper"><input class="user__form__input" type="text" placeholder="Фамилия"></div>
                  <div class="user__form__input-name user__form__input-name_sum">Сумма в BYN</div>
                  <div class="user__form__input-wrapper" >
-                   <input class="user__form__input user__form__input-sum"type="text" placeholder="0.00">
+                   <input class="user__form__input user__form__input-sum" type="text" placeholder="0.00">
                    <span class="user__form__input-sum-byn">BYN</span>
                    <div class="user__form__info">Минимальная сумма вывода составляет 3 BYN. <br>
                                           Для вывода суммы более 1500 BYN – обратись в <a href="" class="user__card__text-link">Cлужбу поддержки</a>.
