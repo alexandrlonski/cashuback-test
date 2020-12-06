@@ -30,7 +30,8 @@ changeCard();
 const activeOptions = () => {
   const parent = document.querySelector('.user__options'),
         optionsLink = document.querySelectorAll('.user__options__item-link'),
-        options = document.querySelectorAll('.user__options__item');
+        options = document.querySelectorAll('.user__options__item'),
+        wayTo = document.querySelectorAll('.breadcrumb-list__link');
     parent.addEventListener('click', (e) => {
       e.preventDefault();
       optionsLink.forEach((item, i) => {
@@ -38,6 +39,8 @@ const activeOptions = () => {
          options[i].style.background = "#FFFADE";
          optionsLink[i].style.color = "black";
          optionsLink[i].style.fontWeight = "bold";
+         wayTo[2].textContent = optionsLink[i].textContent;
+
        } else {
          options[i].style.background = "";
          optionsLink[i].style.color = "";
@@ -72,3 +75,8 @@ const status = () => {
 };
 status();
 
+const changeBreadcrumbs = () => {
+   const wayTo = document.querySelectorAll('.breadcrumb-list__link');
+        //  wayTo.textContent = 
+};
+changeBreadcrumbs();
