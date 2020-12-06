@@ -66,7 +66,6 @@ const status = () => {
     let a = line.clientWidth,
         b = a/100,
         result = 100 - Math.floor(+sum.textContent/b);
-
     statusLine.style.width = `${result}%`;
   }
   longLIne();
