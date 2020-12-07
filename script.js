@@ -28,7 +28,7 @@ const changeCard = () => {
 changeCard();
 
 const activeOptions = () => {
-  const parent = document.querySelector('.user__options'),
+  const parent = document.querySelector('.user__options__list'),
         optionsLink = document.querySelectorAll('.user__options__item-link'),
         options = document.querySelectorAll('.user__options__item'),
         wayTo = document.querySelectorAll('.breadcrumb-list__link');
@@ -36,15 +36,13 @@ const activeOptions = () => {
       e.preventDefault();
       optionsLink.forEach((item, i) => {
        if(e.target == item){
-         options[i].style.background = "#FFFADE";
-         optionsLink[i].style.color = "black";
-         optionsLink[i].style.fontWeight = "bold";
+         options[i].classList.add('user__options__item_active');
+         optionsLink[i].classList.add('user__options__item-link_active');
          wayTo[2].textContent = optionsLink[i].textContent;
 
-       } else {
-         options[i].style.background = "";
-         optionsLink[i].style.color = "";
-         optionsLink[i].style.fontWeight = "";
+       } else  {
+         options[i].classList.remove('user__options__item_active');
+         optionsLink[i].classList.remove('user__options__item-link_active');
        }
     });
   })
@@ -79,7 +77,7 @@ const openCardModal = () => {
    const cardModal = document.getElementById('card-modal'),
          cards = cardModal.querySelectorAll('.user__form__name_modal-card'),
          cardName = document.querySelector('[name=card-name]');
-         console.log(cards);
+
         document.addEventListener('click', (e) => {
           if(e.target.closest('[name=card-name]')){
             e.preventDefault();
