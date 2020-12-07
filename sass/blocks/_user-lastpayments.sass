@@ -1,11 +1,12 @@
 .user
   &__lastpayments
-    padding: 24px 32px 20px 32px
+    padding: 24px 0px 20px 0px
     border: 1px solid #DFE1E5
     border-radius: 4px
     &__title
       margin-top: 0
       margin-bottom: 16px
+      margin-left: 32px
       &-list
         display: flex
         align-items: center
@@ -19,7 +20,9 @@
         text-transform: uppercase
         color: #1B1D25
         margin: 0
-        padding: 5px
+        padding: 5px 0px
+        margin-left: 32px
+        margin-right: 32px
         border-bottom: 1px solid #DFE1E5
       &-item
         position: relative
@@ -33,6 +36,14 @@
         font-size: 12px
         line-height: 28px
         color: #76777C
+        margin: 0
+        padding-top: 6px
+        padding-bottom: 6px
+        padding-left: 32px
+        padding-right: 32px
+        cursor: pointer
+        &:hover
+          background: #FAFAFB
         &_status
           position: absolute
           left: 60%
@@ -63,3 +74,37 @@
       &:hover
         color: #ffffff
         background: #d1d1d1
+    &__info
+      position: relative
+      display: flex
+      flex-wrap: wrap
+      background: #FAFAFB
+      font-weight: 500
+      font-size: 11px
+      line-height: 18px
+      color: #76777C
+      padding-bottom: 12px
+      &-card
+        display: flex
+        flex-direction: column
+        font-style: normal
+        font-weight: 500
+        font-size: 11px
+        line-height: 18px
+        color: #76777C
+        margin-left: 47px
+
+      &-execution
+        position: absolute
+        left: 60%
+        top: 8px
+        line-height: 18px
+
+    &__line
+      display: block
+      height: 1px
+      width: 92.5%
+      background: #76777C
+      opacity: 0.2
+      margin: auto
+      margin-bottom: 8px

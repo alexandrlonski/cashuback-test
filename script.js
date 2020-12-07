@@ -107,3 +107,8 @@ const openCardModal = () => {
 };
 openCardModal();
 
+const showInfoCard = () => {
+  const cards = document.querySelectorAll('.user__lastpayments__title-item');
+  console.log(cards);
+};
+showInfoCard();
