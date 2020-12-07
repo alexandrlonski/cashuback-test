@@ -93,7 +93,7 @@ const openCardModal = () => {
        checked.innerHTML = `<img src="img/modal/icon-check.svg" alt="">`;
         cardModal.addEventListener('click', (e) => {
           cards.forEach((item, i) => {
-            if(e.target === item || e.target == item.children[0].children[0] || e.target == item.children[0].children[1] || e.target == item.children[1] ){
+            if(e.target === item || e.target == item.children[0].children[0] || e.target == item.children[0].children[1] || e.target == item.children[1] || e.target == item.children[0] ){
              cards[i].style.background = '#EBEFF2';
              cards[i].append(checked);
 
