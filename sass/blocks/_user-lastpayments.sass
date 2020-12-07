@@ -5,9 +5,15 @@
     border-radius: 4px
     &__title
       margin-top: 0
-      margin-bottom: 16px
+      margin-bottom: 10px
       margin-left: 32px
+      font-style: normal
+      font-weight: 600
+      font-size: 20px
+      line-height: 28px
+      color: #1B1D25
       &-list
+        position: relative
         display: flex
         align-items: center
         justify-content: space-between
@@ -23,40 +29,51 @@
         padding: 5px 0px
         margin-left: 32px
         margin-right: 32px
+        margin-bottom: 5px
         border-bottom: 1px solid #DFE1E5
       &-item
-        position: relative
-        display: flex
-        align-items: center
-        justify-content: space-between
-        list-style: none
-        padding-left: 0
-        font-style: normal
-        font-weight: 500
-        font-size: 12px
-        line-height: 28px
-        color: #76777C
-        margin: 0
-        padding-top: 6px
-        padding-bottom: 6px
-        padding-left: 32px
-        padding-right: 32px
-        cursor: pointer
-        &:hover
-          background: #FAFAFB
-        &_status
-          position: absolute
-          left: 60%
-          display: flex
-          &-img
-            margin-right: 5px
-        &_card
-          &-number
-            margin-left: 8px
-            margin-right: 8px
         &_date
           position: absolute
-          left: 30%
+          left: 35%
+        &_status
+          position: absolute
+          left: 61.7%
+
+    &__item
+      position: relative
+      display: flex
+      align-items: center
+      justify-content: space-between
+      list-style: none
+      padding-left: 0
+      font-style: normal
+      font-weight: 500
+      font-size: 12px
+      line-height: 28px
+      color: #76777C
+      margin: 0
+      padding-top: 0px
+      padding-bottom: 0px
+      padding-left: 32px
+      padding-right: 32px
+      cursor: pointer
+      &:hover
+        background: #FAFAFB
+      &-wrapper
+        margin-bottom: 8px
+      &_status
+        position: absolute
+        left: 61%
+        display: flex
+        &-img
+          margin-right: 5px
+      &_card
+        &-number
+          margin-left: 6px
+          margin-right: 6px
+      &_date
+        position: absolute
+        left: 36%
     &__button
       width: 92.5%
       height: 40px
@@ -83,7 +100,8 @@
       font-size: 11px
       line-height: 18px
       color: #76777C
-      padding-bottom: 12px
+      padding-top: 5px
+      padding-bottom: 16px
       &-card
         display: flex
         flex-direction: column
@@ -96,8 +114,8 @@
 
       &-execution
         position: absolute
-        left: 60%
-        top: 8px
+        left: 61%
+        top: 13px
         line-height: 18px
 
     &__line

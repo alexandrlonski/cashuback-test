@@ -108,7 +108,64 @@ const openCardModal = () => {
 openCardModal();
 
 const showInfoCard = () => {
-  const cards = document.querySelectorAll('.user__lastpayments__title-item');
-  console.log(cards);
+  const cards = document.querySelectorAll('.user__lastpayments__item'),
+        parent = document.querySelector('.user__lastpayments__item-wrapper'),
+      
+        infoCard = document.createElement('div');
+        infoCard.className = 'user__lastpayments__info';
+        // infoCard.innerHTML = `
+        //          <span class="user__lastpayments__line"></span>
+        //          <div class="user__lastpayments__info-card">
+        //            <span class="user__lastpayments__info-number">Номер заказа: <b>TO-2020-02-02-240430</b></span>
+        //            <span class="user__lastpayments__info-sum">Сумма заказа: 94.16 BYN (46 $)</span>
+        //            <span class="user__lastpayments__info-date">Дата заказа: ${date} </span>
+        //          </div>
+        //          <span class="user__lastpayments__info-execution">
+        //              Кэшбэк принят и выплачен
+        //          </span>
+        //          `;
+
+        parent.addEventListener('click', (e) => {
+
+          cards.forEach((item, i) => {
+            if(e.target == item && e.target.closest('.user__lastpayments__item')){
+              item.insertAdjacentElement('afterend', infoCard);
+              const date = item.children[1].textContent,
+                    sum = item.children[3].textContent,
+                    status = item.children[2].textContent.toLowerCase(),
+                    inDollars = Math.round((parseInt(sum) / 2.56) * 100) / 100 ;
+                    console.log(typeof(inDollars));
+                    
+              infoCard.innerHTML = `
+                 <span class="user__lastpayments__line"></span>
+                 <div class="user__lastpayments__info-card">
+                   <span class="user__lastpayments__info-number">Номер заказа: <b>TO-2020-02-02-240430</b></span>
+                   <span class="user__lastpayments__info-sum">Сумма заказа: ${sum} (${inDollars}$)</span>
+                   <span class="user__lastpayments__info-date">Дата заказа: ${date} </span>
+                 </div>
+                 <span class="user__lastpayments__info-execution">
+                     Кэшбэк ${status}
+                 </span>
+                 `;
+              item.children[0].children[0].attributes.src.value = "img/payments/row-down.svg";
+            }else {
+               item.children[0].children[0].attributes.src.value = "img/payments/row-right.svg";
+              //  infoCard.remove();
+            }
+             
+        });
+          
+          // item.addEventListener('click', (e) => { 
+          //   rowBack(item);
+          //   item.insertAdjacentElement('afterend', infoCard);
+          //   item.children[0].children[0].attributes.src.value = "img/payments/row-down.svg";
+ 
+          // });
+        
+
+        })         
+         
+               
+          
 };
 showInfoCard();
