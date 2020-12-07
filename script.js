@@ -91,17 +91,15 @@ const openCardModal = () => {
        const checked = document.createElement('span');
        checked.className ='user__form__name_modal-card-checked';
        checked.innerHTML = `<img src="img/modal/icon-check.svg" alt="">`;
-       console.log(checked);
         cardModal.addEventListener('click', (e) => {
           cards.forEach((item, i) => {
-            if(e.target == item){
+            if(e.target === item || e.target == item.children[0].children[0] || e.target == item.children[0].children[1] || e.target == item.children[1] ){
              cards[i].style.background = '#EBEFF2';
              cards[i].append(checked);
-             console.dir(cards[i].children[0].children[1].innerHTML);
+
              cardName.value = cards[i].children[0].children[1].innerHTML;
            } else {
              cards[i].style.background = '';
-            //  checked.remove();
              
            }
 
