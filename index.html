@@ -162,11 +162,30 @@
                <h2 class="user__form__title">
                  Вывод средств
                </h2>
-               <form action="POST">
+               <form action="">
                  <div class="user__form__input-name">Выберите карту</div>
+                 
                  <div class="user__form__input-wrapper" >
-                   <input class="user__form__input user__form__input-card" type="text" placeholder="Номер карты">
+                   <input name="card-name" class="user__form__input user__form__input-card" type="password" placeholder="Номер карты">
                    <img class="user__form__input-image" src="img/user/creditcard.svg" alt="icon: creditcard">
+                   <div class="user__form__name_modal" id="card-modal">
+                     <h6 class="user__form__name_modal-title">карты</h6>
+                     <div class="user__form__name_modal-card">
+                       <div class="user__form__name_modal-card-name-wrapper">
+                         <img class="user__form__name_modal-card-img" src="img/modal/mastercard.svg" alt=""> <span>•••• •••• •••• 4563</span>
+                       </div>
+                     <span class="user__form__name_modal-card-name">MasterCard World</span>
+                     
+                    </div>
+                     <div class="user__form__name_modal-card">
+                       <div class="user__form__name_modal-card-name-wrapper"><img class="user__form__name_modal-card-img" src="img/modal/visa.svg" alt=""> <span>•••• •••• •••• 1994</span>
+                      </div>
+                     <span class="user__form__name_modal-card-name">Visa Classic</span>
+                    
+                    </div>
+                     <button class="user__form__name_modal-btn">привязать другую карту</button>
+                   
+                 </div>
                   </div>
                  <div class="user__form__input-name">Имя</div>
                  <div class="user__form__input-wrapper"><input class="user__form__input" type="text" placeholder="Имя"></div>

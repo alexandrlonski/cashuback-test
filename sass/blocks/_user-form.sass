@@ -65,3 +65,78 @@
       text-transform: uppercase
       color: #76777C
       transition: all 0.3s
+    &__name_modal
+      display: none
+      position: absolute
+      top: 40px
+      min-width: 320px
+      min-height: 200px
+      box-shadow: 0px 12px 24px rgba(100, 100, 100, 0.4)
+      border-radius: 4px
+      z-index: 999999999999
+      background-color: #fff
+      &-title
+        font-style: normal
+        font-weight: bold
+        font-size: 11px
+        line-height: 21px
+        letter-spacing: 0.08em
+        text-transform: uppercase
+        color: #ACB1B6
+        margin-top: 8px
+        margin-left: 12px
+        margin-bottom: 4px
+      &-card
+
+        position: relative
+        min-height: 56px
+        padding: 6px 12px
+        font-style: normal
+        font-weight: 500
+        font-size: 14px
+        line-height: 21px
+        color: #1B1D25
+        width: 100%
+        background: #ffffff
+        cursor: pointer
+        &:hover
+          background: #EBEFF2
+        &-name
+          position: absolute
+          top: 25px
+          left: 36px
+          font-style: normal
+          font-weight: 500
+          font-size: 11px
+          line-height: 16px
+          color: #ACB1B6
+          &-wrapper
+            display: flex
+            align-items: center
+        &-img
+          margin-right: 8px
+        &-checked
+          display: block
+          position: absolute
+          right: 13px
+          top: 20px
+      &-btn
+        width: 296px
+        font-style: normal
+        font-weight: bold
+        font-size: 12px
+        line-height: 28px
+        letter-spacing: 0.08em
+        text-transform: uppercase
+        color: #FA6400
+        border: 1px solid #FA6400
+        border-radius: 4px
+        background: #fff
+        margin-left: 12px
+        margin-right: 12px
+        margin-top: 6px
+        cursor: pointer
+        transition: all .3s
+        &:hover
+          color: #ffffff
+          background: #FA6400

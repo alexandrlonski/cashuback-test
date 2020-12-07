@@ -75,8 +75,39 @@ const status = () => {
 };
 status();
 
-const changeBreadcrumbs = () => {
-   const wayTo = document.querySelectorAll('.breadcrumb-list__link');
-        //  wayTo.textContent = 
+const openCardModal = () => {
+   const cardModal = document.getElementById('card-modal'),
+         cards = cardModal.querySelectorAll('.user__form__name_modal-card'),
+         cardName = document.querySelector('[name=card-name]');
+         console.log(cards);
+        document.addEventListener('click', (e) => {
+          if(e.target.closest('[name=card-name]')){
+            e.preventDefault();
+            cardModal.style.display = 'block';
+          } else if(!e.target.closest('#card-modal')) {
+            cardModal.style.display = 'none';
+          }
+        }); 
+       const checked = document.createElement('span');
+       checked.className ='user__form__name_modal-card-checked';
+       checked.innerHTML = `<img src="img/modal/icon-check.svg" alt="">`;
+       console.log(checked);
+        cardModal.addEventListener('click', (e) => {
+          cards.forEach((item, i) => {
+            if(e.target == item){
+             cards[i].style.background = '#EBEFF2';
+             cards[i].append(checked);
+             console.dir(cards[i].children[0].children[1].innerHTML);
+             cardName.value = cards[i].children[0].children[1].innerHTML;
+           } else {
+             cards[i].style.background = '';
+            //  checked.remove();
+             
+           }
+
+          })
+          
+        });
 };
-changeBreadcrumbs();
+openCardModal();
+
