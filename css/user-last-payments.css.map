@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AACG,AAAD,oBAAgB,AAAC,CACf,OAAO,CAAE,kBAAkB,CAEX,AADf,AAAD,2BAAQ,AAAC,CACP,MAAM,CAAE,CAAC,CAAG",
+    "sources": [
+        "../sass/blocks/user-last-payments.sass"
+    ],
+    "names": [],
+    "file": "user-last-payments.css"
+}
