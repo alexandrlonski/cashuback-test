@@ -158,3 +158,33 @@ const showInfoCard = () => {
       })              
 };
 showInfoCard();
+
+const showMore = () => {
+  const showBlock = document.querySelector('.user__lastpayments__item-wrapper'),
+        btnShowMore = document.querySelector('.user__lastpayments__button'),
+        cardInfo = document.querySelectorAll('.user__lastpayments__item'),
+        height = showBlock.offsetHeight,
+        btnClose = document.createElement('div');
+        btnClose.className = 'user__lastpayments__button-close';
+        btnClose.textContent = "Скрыть";
+
+  let contentHeight;       
+        cardInfo.forEach((elem, i) => {
+          contentHeight = elem.offsetHeight * i;
+          
+        });
+        
+        btnShowMore.addEventListener('click', (e) => {
+
+          if(height < contentHeight) {
+            showBlock.style.height = `${height + 84}px `;
+            
+          } else if(height >= contentHeight){
+              showBlock.style.height = `417px `; 
+            }
+          
+          showMore();
+        });
+      
+};
+showMore();
