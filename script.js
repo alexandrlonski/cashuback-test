@@ -106,7 +106,7 @@ const openCardModal = () => {
           
         });
 };
-// openCardModal();
+openCardModal();
 
 const validationUserForm = () => {
     const userForm = document.getElementById('user-form'),
