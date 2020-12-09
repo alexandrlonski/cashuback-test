@@ -262,3 +262,22 @@ const showMore = () => {
       
 };
 // showMore();
+
+const mMenu = () => {
+  const menuBtn = document.querySelector('.menu-button'),
+        burger = document.querySelector('.line-center'),
+        mMenu = document.querySelector('.m-menu');
+  document.addEventListener('click', (e) => {
+      if(e.target.closest('.menu-button')){
+         burger.classList.toggle('line-center-active');
+       mMenu.classList.toggle('m-menu-visible');
+      } else if(!e.target.closest('.m-menu')){
+        burger.classList.remove('line-center-active');
+       mMenu.classList.remove('m-menu-visible');
+      }
+       
+
+  });
+
+}
+mMenu();

@@ -79,3 +79,24 @@
   .user
     &__card
       padding-left: 0
+
+@media  ( max-width: 480px )
+  .user
+    &__card
+      &__sum
+        flex-direction: column
+        padding: 0
+        &-availability
+          width: 175px
+          padding-left: 0
+          padding-top: 20px
+          padding-bottom: 20px
+          margin: auto
+        &-expects
+          width: 175px
+          padding-left: 0
+          padding-top: 20px
+          padding-bottom: 20px
+          margin: auto
+          border-left: none
+          border-top: 1px solid #DFE1E5

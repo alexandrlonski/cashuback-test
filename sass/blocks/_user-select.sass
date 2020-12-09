@@ -49,12 +49,15 @@
   .user
     &__select
       &__card
-
         min-height: 98px
         min-width: 100px
-        border: 1px solid #DFE1E5
-        border-radius: 4px
         padding: 10px
         margin-right: 16px
-        cursor: pointer
         margin-bottom: 20px
+
+@media  ( max-width: 700px )
+  .user
+    &__select
+      padding-left: 20px
+      &__card
+        min-height: 125px
