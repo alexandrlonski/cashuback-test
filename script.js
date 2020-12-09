@@ -137,7 +137,7 @@ const validationUserForm = () => {
         if(inputCard.value.length < 19){
           alert('Номер карты введён не верно');  
           return;
-        } else if(inputSum.value > 1500){
+        } else if(inputSum.value > 1500 || inputSum.value < 3){
                  info.style.borderBottom = '1px solid red';
                  inputSum.addEventListener('input', () => {
                    if(!inputSum.value == ''){
