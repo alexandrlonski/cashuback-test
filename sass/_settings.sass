@@ -25,10 +25,12 @@ input::-webkit-input-placeholder
   font-size: 13px
   line-height: 24px
   color: #ACB1B6
+// #card-num:focus::-webkit-input-placeholder
+//   color: #1B1D25
 .color-gray
   color: #76777C
 .black
-  color: black
+  color: #1B1D25
 .green
   color: #489A51 !important
 .image-info
@@ -45,16 +47,20 @@ input:focus
   border-color: #FFC542
   font-family: 'Montserrat'
   font-style: normal
-  font-weight: 600
+  font-weight: 500
   font-size: 14px
   line-height: 21px
   color: #1B1D25
+  &::-webkit-input-placeholder
+    color: #1B1D25
 
 .input
   background-color: #fff
   border: 1px solid #DFE1E5
   border-radius: 4px
   outline: none
+button
+  cursor: pointer
 .button
   font-family: 'Montserrat'
   font-style: normal
@@ -77,7 +83,7 @@ input:focus
   margin-right: 3px
   font-weight: bold
 .black
-  color: black
+  color: #1B1D25
 h1
   font-style: normal
   font-weight: 600

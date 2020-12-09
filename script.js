@@ -71,18 +71,19 @@ const status = () => {
   }
   longLIne();
 };
-status();
+// status();
 
 const openCardModal = () => {
    const cardModal = document.getElementById('card-modal'),
          cards = cardModal.querySelectorAll('.user__form__name_modal-card'),
-         cardName = document.querySelector('[name=card-name]');
+         cardName = document.getElementById('user-card');
+         
 
         document.addEventListener('click', (e) => {
-          if(e.target.closest('[name=card-name]')){
+          if(e.target.closest('#user-card')){
             e.preventDefault();
             cardModal.style.display = 'block';
-          } else if(!e.target.closest('#card-modal')) {
+          } else if(!e.target.closest('#card-modal') || e.target.closest('.user__form__name_modal-card')  ) {
             cardModal.style.display = 'none';
           }
         }); 
@@ -107,6 +108,72 @@ const openCardModal = () => {
 };
 openCardModal();
 
+const validationUserForm = () => {
+    const userForm = document.getElementById('user-form'),
+          inputCard = document.getElementById('user-card'),
+          inputsName = document.querySelectorAll('#user-name, #user-surname'),
+          inputSurname = document.getElementById('user-surname'),
+          inputSum = document.getElementById('user-sum'),
+          inputs = userForm.querySelectorAll('.user__form__input'),
+          info = document.querySelector('.user__form__info'),
+          btnSubmit = userForm.querySelector('.user__form__button');
+   
+  inputSum.addEventListener('input', () => {
+               inputSum.value = inputSum.value.replace(/[^0-9.]/ig, '').substring(0,7);
+               
+               });
+
+  inputsName.forEach((elem) => {
+             elem.addEventListener('input', () => {
+               elem.value = elem.value.replace(/[^а-яё\s]/ig, '');
+               });
+             });
+  maskCard('#user-card');
+ 
+  const emptyInput = () => {
+      userForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        console.log(inputCard.value.length);
+        if(inputCard.value.length < 19){
+          alert('Номер карты введён не верно');  
+          return;
+        } else if(inputSum.value > 1500){
+                 info.style.borderBottom = '1px solid red';
+                 inputSum.addEventListener('input', () => {
+                   if(!inputSum.value == ''){
+                     info.style.borderBottom = '';
+                   }
+                 })
+                return ;
+        } else {
+                 inputSum.value = '';
+                 inputCard.value = '';
+               }
+
+      alert('операция проведена успешна'); 
+// Проветка input на наличие заполнения
+        // inputs.forEach((elem, i)  => {
+          // if(elem.value == ''){
+          //   alert(`Заполните поле номер ${i+1}`);
+          //   elem.style.border = '1px solid red';
+          //   elem.addEventListener('input', () => {
+          //     if(!elem.value == ''){
+          //       elem.style.border = '';
+          //     }
+          //   })
+          // } 
+      // })
+      })
+    
+
+    
+  };          
+  emptyInput();
+
+
+};
+validationUserForm();
+
 const showInfoCard = () => {
   const cards = document.querySelectorAll('.user__lastpayments__item'),
         parent = document.querySelector('.user__lastpayments__item-wrapper'),
@@ -129,10 +196,16 @@ const showInfoCard = () => {
               || e.target == item.children[3] ){
               item.insertAdjacentElement('afterend', infoCard);
               const date = item.children[1].textContent,
-                    
                     sum = item.children[3].textContent,
-                    status = item.children[2].textContent.toLowerCase(),
                     inDollars = Math.round((parseInt(sum) / 2.56) * 100) / 100 ;
+                let status = item.children[2].textContent.toLowerCase();    
+                    
+                    if(status.trim() === 'переведен'){
+                      console.log(1);
+                        status = 'принят и выплачен';
+                    } else {
+                      status = item.children[2].textContent.toLowerCase();
+                    }
 
               statusText[i].classList.add('black');
               item.classList.add('bg-active');      
@@ -140,12 +213,13 @@ const showInfoCard = () => {
                  <span class="user__lastpayments__line"></span>
                  <div class="user__lastpayments__info-card">
                    <span class="user__lastpayments__info-number">Номер заказа: <b>TO-2020-02-02-240430</b></span>
-                   <span class="user__lastpayments__info-sum">Сумма заказа: ${sum} (${inDollars}$)</span>
-                   <span class="user__lastpayments__info-date">Дата заказа: ${date} </span>
+                   <span class="user__lastpayments__info-sum">Сумма заказа: 94.16 BYN (46 $)</span>
+                   <span class="user__lastpayments__info-date">Дата заказа: 02.02.2020 21:06</span>
                  </div>
                  <span class="user__lastpayments__info-execution">
                      Кэшбэк ${status}
                  </span>
+               
                  `;
               item.children[0].children[0].attributes.src.value = "img/payments/row-down.svg";
             }else {
@@ -187,4 +261,4 @@ const showMore = () => {
         });
       
 };
-showMore();
+// showMore();

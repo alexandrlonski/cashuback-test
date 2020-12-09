@@ -1,6 +1,7 @@
 .user
   &-container
     display: flex
+
   &__options
     display: flex
     flex-direction: column
@@ -46,7 +47,7 @@
       &-status
         position: absolute
         left: 0
-        width: 200px
+        width: 212px
         height: 4px
         border-radius: 3px
         background: #11BF6A
@@ -100,3 +101,8 @@
         top: 9px
         left: 20px
         margin-right: 5px
+
+@media  ( max-width: 870px )
+  .user
+    &-container
+      flex-wrap: wrap

@@ -1,6 +1,6 @@
 .user
   &__lastpayments
-    padding: 24px 0px 20px 0px
+    padding: 24px 0px 25px 0px
     border: 1px solid #DFE1E5
     border-radius: 4px
     &__title
@@ -60,8 +60,6 @@
       &:hover
         background: #FAFAFB
       &-wrapper
-        overflow: hidden
-        height: 417px
         margin-bottom: 8px
       &_status
         position: absolute
@@ -73,9 +71,14 @@
         &-number
           margin-left: 6px
           margin-right: 6px
+          color: #000000
       &_date
         position: absolute
         left: 36%
+      &_sumback
+        color: #1B1D25
+        &-num
+          font-weight: bold
     &__button
       width: 92.5%
       height: 40px
@@ -91,8 +94,8 @@
       outline: none
       transition: all .3s ease
       &:hover
-        color: #ffffff
-        background: #d1d1d1
+        // color: #ffffff
+        background: #f2f2f2
     &__info
       position: relative
       display: flex
@@ -130,3 +133,47 @@
       margin-bottom: 8px
 .bg-active
   background: #FAFAFB
+
+@media  ( max-width: 991px )
+  .user
+    &__lastpayments
+      &__button
+        width: 80%
+
+@media  ( max-width: 582px )
+  .user__lastpayments__button
+    width: 83.5%
+  .user
+    &__lastpayments
+      &__title-item_date
+        left: 28%
+      &__title-item_status
+        left: 54.7%
+      &__item_date
+        left: 31%
+      &__item_status
+        left: 54%
+      &__info-card
+        margin-left: 20px
+
+@media  ( max-width: 473px )
+  .user
+    &__lastpayments
+      &__title-item_date
+        display: none
+      &__title-item_status
+        left: 39.7%
+      &__item_date
+        display: none
+      &__item_status
+        left: 41%
+
+@media  ( max-width: 370px )
+  .user
+    &__lastpayments
+      &__title-item_status
+        display: none
+      &__item_status
+        display: none
+      &__button
+        width: 78%

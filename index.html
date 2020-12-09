@@ -8,7 +8,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <script src="script.js" defer></script>
+  <script defer src="mack.js" ></script>
+  <script defer src="script.js" ></script>
 </head>
 
 <body>
@@ -57,7 +58,7 @@
     </div>
   </header>
   <!-- /.header -->
-  <section class="add">
+    <section class="add">
     <div class="container add-container">
     <img class="add__image" src="img/rrb-card.png" alt="image: rrb-card">
     <div class="add__text"><span class="add__text-top">Получай кэшбэк сразу на карту!</span > <span class="add__text-bottom"> Кобренд–карта РРБ Банка поможет удобно получать кэшбэк.</span></div>
@@ -142,8 +143,8 @@
              <div class="user__select">
                <h2 class="user__select__title">Выберите способ вывода</h2>
                <div class="user__select__cards">
-                 <div class="user__select__card card-master-visa">
-                   <img class="user__cards-checkbox" src="img/card-unchecked.svg" alt="icon: elipse">
+                 <div class="user__select__card card-master-visa card-active">
+                   <img class="user__cards-checkbox" src="img/card-checked.svg" alt="icon: elipse">
                    <div class="user__cards">
                      <span><img src="img/visa-logo.svg" alt="logo: mastercard"><img src="img/mastercard-logo.svg" alt="logo: visa"></span>
                      <span class="user__cards-bank">Банковская карта</span>
@@ -159,7 +160,7 @@
                    </div>
                  </div>
                </div>
-               <div class="user__form">
+               <div class="user__form" id="user-form">
                <h2 class="user__form__title">
                  Вывод средств
                </h2>
@@ -167,7 +168,7 @@
                  <div class="user__form__input-name">Выберите карту</div>
                  
                  <div class="user__form__input-wrapper" >
-                   <input name="card-name" class="user__form__input user__form__input-card" type="password" placeholder="Номер карты">
+                   <input id="user-card" class="user__form__input user__form__input-card" type="" placeholder="Номер карты"  required>
                    <img class="user__form__input-image" src="img/user/creditcard.svg" alt="icon: creditcard">
                    <div class="user__form__name_modal" id="card-modal">
                      <span class="user__form__name_modal-title">карты</span>
@@ -189,17 +190,22 @@
                  </div>
                   </div>
                  <div class="user__form__input-name">Имя</div>
-                 <div class="user__form__input-wrapper"><input class="user__form__input" type="text" placeholder="Имя"></div>
+                 <div class="user__form__input-wrapper">
+                   <input id="user-name" class="user__form__input" type="text" placeholder="Имя" value="Константин" required>
+                 </div>
                  <div class="user__form__input-name">Фамилия</div>
-                 <div  class="user__form__input-wrapper"><input class="user__form__input" type="text" placeholder="Фамилия"></div>
+                 <div  class="user__form__input-wrapper">
+                   <input id="user-surname"class="user__form__input" type="text" placeholder="Фамилия" value="Константинопольский" required>
+                 </div>
                  <div class="user__form__input-name user__form__input-name_sum">Сумма в BYN</div>
                  <div class="user__form__input-wrapper" >
-                   <input class="user__form__input user__form__input-sum" type="text" placeholder="0.00">
-                   <span class="user__form__input-sum-byn">BYN</span>
-                   <div class="user__form__info">Минимальная сумма вывода составляет 3 BYN. <br>
-                                          Для вывода суммы более 1500 BYN – обратись в <a href="" class="user__card__text-link">Cлужбу поддержки</a>.
-                                        </div>
-                   </div>
+                    <input id="user-sum" class="user__form__input user__form__input-sum" type="text" placeholder="0.00" required>
+                    <span class="user__form__input-sum-byn">BYN</span>
+                    <div class="user__form__info">Минимальная сумма вывода составляет 3 BYN. <br>
+                                                  Для вывода суммы более 1500 BYN – обратись в 
+                        <a href="" class="user__card__text-link">Cлужбу поддержки</a>.
+                    </div>
+                  </div>
                  
                   <button class="user__form__button" type="submit">Вывести Средства</button>
                   <div class="user__form__info-wrapper">
@@ -237,7 +243,7 @@
                      <span class="user__lastpayments__item_status-text">В ожидании</span>
                    </li>
                    <li class="user__lastpayments__item_sumback">
-                     2.00 BYN
+                     <span class="user__lastpayments__item_sumback-num">2.00</span> BYN
                    </li>
                  </ul>
                  <ul class="user__lastpayments__item">
@@ -254,7 +260,7 @@
                      <span class="user__lastpayments__item_status-text">В ожидании</span>
                    </li>
                    <li class="user__lastpayments__item_sumback">
-                     12.00 BYN
+                     <span class="user__lastpayments__item_sumback-num">12.00</span> BYN
                    </li>
                  </ul>
                  <ul class="user__lastpayments__item">
@@ -271,7 +277,7 @@
                      <span class="user__lastpayments__item_status-text">Переведен</span>
                    </li>
                    <li class="user__lastpayments__item_sumback">
-                     2.00 BYN
+                     <span class="user__lastpayments__item_sumback-num">2.00</span> BYN
                    </li>
                  </ul>
                  <ul class="user__lastpayments__item">
@@ -288,7 +294,7 @@
                      <span class="user__lastpayments__item_status-text">В ожидании</span>
                    </li>
                    <li class="user__lastpayments__item_sumback">
-                     1.00 BYN
+                     <span class="user__lastpayments__item_sumback-num">1.00</span> BYN
                    </li>
                  </ul>
                  <ul class="user__lastpayments__item">
@@ -305,7 +311,7 @@
                      <span class="user__lastpayments__item_status-text">Отменён</span>
                    </li>
                    <li class="user__lastpayments__item_sumback">
-                     1.50 BYN
+                     <span class="user__lastpayments__item_sumback-num">1.50</span> BYN
                    </li>
                  </ul>
                  <ul class="user__lastpayments__item">
@@ -322,7 +328,7 @@
                      <span class="user__lastpayments__item_status-text">В ожидании</span>
                    </li>
                    <li class="user__lastpayments__item_sumback">
-                     2.00 BYN
+                     <span class="user__lastpayments__item_sumback-num">2.00</span> BYN
                    </li>
                  </ul>
                  <ul class="user__lastpayments__item">
@@ -339,7 +345,7 @@
                      <span class="user__lastpayments__item_status-text">В ожидании</span>
                    </li>
                    <li class="user__lastpayments__item_sumback">
-                     12.00 BYN
+                     <span class="user__lastpayments__item_sumback-num">12.00</span> BYN
                    </li>
                  </ul>
                  <ul class="user__lastpayments__item">
@@ -356,7 +362,7 @@
                      <span class="user__lastpayments__item_status-text">Переведен</span>
                    </li>
                    <li class="user__lastpayments__item_sumback">
-                     2.00 BYN
+                     <span class="user__lastpayments__item_sumback-num">2.00</span> BYN
                    </li>
                  </ul>
                  <ul class="user__lastpayments__item">
@@ -373,7 +379,7 @@
                      <span class="user__lastpayments__item_status-text">В ожидании</span>
                    </li>
                    <li class="user__lastpayments__item_sumback">
-                     2.00 BYN
+                     <span class="user__lastpayments__item_sumback-num">2.00</span> BYN
                    </li>
                  </ul>
                  <ul class="user__lastpayments__item">
@@ -390,7 +396,7 @@
                      <span class="user__lastpayments__item_status-text">В ожидании</span>
                    </li>
                    <li class="user__lastpayments__item_sumback">
-                     12.00 BYN
+                     <span class="user__lastpayments__item_sumback-num">12.00</span> BYN
                    </li>
                  </ul>
                  <ul class="user__lastpayments__item">
@@ -407,7 +413,7 @@
                      <span class="user__lastpayments__item_status-text">Переведен</span>
                    </li>
                    <li class="user__lastpayments__item_sumback">
-                     2.00 BYN
+                     <span class="user__lastpayments__item_sumback-num">2.00</span> BYN
                    </li>
                  </ul>
                  <ul class="user__lastpayments__item">
@@ -424,7 +430,7 @@
                      <span class="user__lastpayments__item_status-text">Переведен</span>
                    </li>
                    <li class="user__lastpayments__item_sumback">
-                     2.00 BYN
+                     <span class="user__lastpayments__item_sumback-num">2.00</span> BYN
                    </li>
                  </ul>
                  <ul class="user__lastpayments__item">
@@ -441,7 +447,7 @@
                      <span class="user__lastpayments__item_status-text">Переведен</span>
                    </li>
                    <li class="user__lastpayments__item_sumback">
-                     12.00 BYN
+                     <span class="user__lastpayments__item_sumback-num">12.00</span> BYN
                    </li>
                  </ul>
                  <ul class="user__lastpayments__item">
@@ -458,7 +464,7 @@
                      <span class="user__lastpayments__item_status-text">Переведен</span>
                    </li>
                    <li class="user__lastpayments__item_sumback">
-                     2.00 BYN
+                     <span class="user__lastpayments__item_sumback-num">2.00</span> BYN
                    </li>
                  </ul>
                  <ul class="user__lastpayments__item">
@@ -475,267 +481,15 @@
                      <span class="user__lastpayments__item_status-text">Отменён</span>
                    </li>
                    <li class="user__lastpayments__item_sumback">
-                     2.00 BYN
+                     <span class="user__lastpayments__item_sumback-num">2.00</span> BYN
                    </li>
                  </ul>
-                 <ul class="user__lastpayments__item">
-                   <li class="user__lastpayments__item_card">
-                     <img class="user__lastpayments__item_card-btn" src="img/payments/row-right.svg" alt="icon: row">
-                     <span class="user__lastpayments__item_card-number">•••• 5682</span>
-                     <img class="user__lastpayments__item_card-logo" src="img/payments/master.svg" alt="logo: mastercard">
-                   </li>
-                   <li class="user__lastpayments__item_date">
-                     02.02.2020 21:06
-                    </li>
-                   <li class="user__lastpayments__item_status">
-                     <img class="user__lastpayments__item_status-img" src="img/payments/waiting.svg" alt="icon">
-                     <span class="user__lastpayments__item_status-text">В ожидании</span>
-                   </li>
-                   <li class="user__lastpayments__item_sumback">
-                     2.00 BYN
-                   </li>
-                 </ul>
-                 <ul class="user__lastpayments__item">
-                   <li class="user__lastpayments__item_card">
-                     <img class="user__lastpayments__item_card-btn" src="img/payments/row-right.svg" alt="icon: row">
-                     <span class="user__lastpayments__item_card-number">•••• 3244</span>
-                     <img class="user__lastpayments__item_card-logo" src="img/payments/visa.svg" alt="logo: visa">
-                   </li>
-                   <li class="user__lastpayments__item_date">
-                     02.02.2020 15:23
-                    </li>
-                   <li class="user__lastpayments__item_status">
-                     <img class="user__lastpayments__item_status-img" src="img/payments/waiting.svg" alt="icon">
-                     <span class="user__lastpayments__item_status-text">В ожидании</span>
-                   </li>
-                   <li class="user__lastpayments__item_sumback">
-                     12.00 BYN
-                   </li>
-                 </ul>
-                 <ul class="user__lastpayments__item">
-                   <li class="user__lastpayments__item_card">
-                     <img class="user__lastpayments__item_card-btn" src="img/payments/row-right.svg" alt="icon: row">
-                     <span class="user__lastpayments__item_card-number">•••• 5682</span>
-                     <img class="user__lastpayments__item_card-logo" src="img/payments/master.svg" alt="logo: mastercard">
-                   </li>
-                   <li class="user__lastpayments__item_date">
-                     02.02.2020 13:09
-                    </li>
-                   <li class="user__lastpayments__item_status">
-                     <img class="user__lastpayments__item_status-img" src="img/payments/sucsses.svg" alt="icon">
-                     <span class="user__lastpayments__item_status-text">Переведен</span>
-                   </li>
-                   <li class="user__lastpayments__item_sumback">
-                     2.00 BYN
-                   </li>
-                 </ul>
-                 <ul class="user__lastpayments__item">
-                   <li class="user__lastpayments__item_card">
-                     <img class="user__lastpayments__item_card-btn" src="img/payments/row-right.svg" alt="icon: row">
-                     <span class="user__lastpayments__item_card-number">•••• 5682</span>
-                     <img class="user__lastpayments__item_card-logo" src="img/payments/master.svg" alt="logo: mastercard">
-                   </li>
-                   <li class="user__lastpayments__item_date">
-                     01.02.2020 10:02
-                    </li>
-                   <li class="user__lastpayments__item_status">
-                     <img class="user__lastpayments__item_status-img" src="img/payments/waiting.svg" alt="icon">
-                     <span class="user__lastpayments__item_status-text">В ожидании</span>
-                   </li>
-                   <li class="user__lastpayments__item_sumback">
-                     1.00 BYN
-                   </li>
-                 </ul>
-                 <ul class="user__lastpayments__item">
-                   <li class="user__lastpayments__item_card">
-                     <img class="user__lastpayments__item_card-btn" src="img/payments/row-right.svg" alt="icon: row">
-                     <span class="user__lastpayments__item_card-number">•••• 5682</span>
-                     <img class="user__lastpayments__item_card-logo" src="img/payments/master.svg" alt="logo: mastercard">
-                   </li>
-                   <li class="user__lastpayments__item_date">
-                     31.01.2020 22:06
-                    </li>
-                   <li class="user__lastpayments__item_status">
-                     <img class="user__lastpayments__item_status-img" src="img/payments/offer.svg" alt="icon">
-                     <span class="user__lastpayments__item_status-text">Отменён</span>
-                   </li>
-                   <li class="user__lastpayments__item_sumback">
-                     1.50 BYN
-                   </li>
-                 </ul>
-                 <ul class="user__lastpayments__item">
-                   <li class="user__lastpayments__item_card">
-                     <img class="user__lastpayments__item_card-btn" src="img/payments/row-right.svg" alt="icon: row">
-                     <span class="user__lastpayments__item_card-number">•••• 5682</span>
-                     <img class="user__lastpayments__item_card-logo" src="img/payments/master.svg" alt="logo: mastercard">
-                   </li>
-                   <li class="user__lastpayments__item_date">
-                     30.01.2020 21:06
-                    </li>
-                   <li class="user__lastpayments__item_status">
-                     <img class="user__lastpayments__item_status-img" src="img/payments/waiting.svg" alt="icon">
-                     <span class="user__lastpayments__item_status-text">В ожидании</span>
-                   </li>
-                   <li class="user__lastpayments__item_sumback">
-                     2.00 BYN
-                   </li>
-                 </ul>
-                 <ul class="user__lastpayments__item">
-                   <li class="user__lastpayments__item_card">
-                     <img class="user__lastpayments__item_card-btn" src="img/payments/row-right.svg" alt="icon: row">
-                     <span class="user__lastpayments__item_card-number">•••• 3244</span>
-                     <img class="user__lastpayments__item_card-logo" src="img/payments/visa.svg" alt="logo: mastercard">
-                   </li>
-                   <li class="user__lastpayments__item_date">
-                     30.01.2020 15:23
-                    </li>
-                   <li class="user__lastpayments__item_status">
-                     <img class="user__lastpayments__item_status-img" src="img/payments/waiting.svg" alt="icon">
-                     <span class="user__lastpayments__item_status-text">В ожидании</span>
-                   </li>
-                   <li class="user__lastpayments__item_sumback">
-                     12.00 BYN
-                   </li>
-                 </ul>
-                 <ul class="user__lastpayments__item">
-                   <li class="user__lastpayments__item_card">
-                     <img class="user__lastpayments__item_card-btn" src="img/payments/row-right.svg" alt="icon: row">
-                     <span class="user__lastpayments__item_card-number">•••• 3244</span>
-                     <img class="user__lastpayments__item_card-logo" src="img/payments/visa.svg" alt="logo: mastercard">
-                   </li>
-                   <li class="user__lastpayments__item_date">
-                     29.01.2020 13:09
-                    </li>
-                   <li class="user__lastpayments__item_status">
-                     <img class="user__lastpayments__item_status-img" src="img/payments/sucsses.svg" alt="icon">
-                     <span class="user__lastpayments__item_status-text">Переведен</span>
-                   </li>
-                   <li class="user__lastpayments__item_sumback">
-                     2.00 BYN
-                   </li>
-                 </ul>
-                 <ul class="user__lastpayments__item">
-                   <li class="user__lastpayments__item_card">
-                     <img class="user__lastpayments__item_card-btn" src="img/payments/row-right.svg" alt="icon: row">
-                     <span class="user__lastpayments__item_card-number">•••• 3244</span>
-                     <img class="user__lastpayments__item_card-logo" src="img/payments/visa.svg" alt="logo: mastercard">
-                   </li>
-                   <li class="user__lastpayments__item_date">
-                     29.02.2020 10:02
-                   </li>
-                   <li class="user__lastpayments__item_status">
-                     <img class="user__lastpayments__item_status-img" src="img/payments/waiting.svg" alt="icon">
-                     <span class="user__lastpayments__item_status-text">В ожидании</span>
-                   </li>
-                   <li class="user__lastpayments__item_sumback">
-                     2.00 BYN
-                   </li>
-                 </ul>
-                 <ul class="user__lastpayments__item">
-                   <li class="user__lastpayments__item_card">
-                     <img class="user__lastpayments__item_card-btn" src="img/payments/row-right.svg" alt="icon: row">
-                     <span class="user__lastpayments__item_card-number">•••• 5682</span>
-                     <img class="user__lastpayments__item_card-logo" src="img/payments/master.svg" alt="logo: mastercard">
-                   </li>
-                   <li class="user__lastpayments__item_date">
-                     29.01.2020 22:06
-                    </li>
-                   <li class="user__lastpayments__item_status">
-                     <img class="user__lastpayments__item_status-img" src="img/payments/waiting.svg" alt="icon">
-                     <span class="user__lastpayments__item_status-text">В ожидании</span>
-                   </li>
-                   <li class="user__lastpayments__item_sumback">
-                     12.00 BYN
-                   </li>
-                 </ul>
-                 <ul class="user__lastpayments__item">
-                   <li class="user__lastpayments__item_card">
-                     <img class="user__lastpayments__item_card-btn" src="img/payments/row-right.svg" alt="icon: row">
-                     <span class="user__lastpayments__item_card-number">•••• 5682</span>
-                     <img class="user__lastpayments__item_card-logo" src="img/payments/master.svg" alt="logo: mastercard">
-                   </li>
-                   <li class="user__lastpayments__item_date">
-                     27.01.2020 21:06
-                    </li>
-                   <li class="user__lastpayments__item_status">
-                     <img class="user__lastpayments__item_status-img" src="img/payments/sucsses.svg" alt="icon">
-                     <span class="user__lastpayments__item_status-text">Переведен</span>
-                   </li>
-                   <li class="user__lastpayments__item_sumback">
-                     2.00 BYN
-                   </li>
-                 </ul>
-                 <ul class="user__lastpayments__item">
-                   <li class="user__lastpayments__item_card">
-                     <img class="user__lastpayments__item_card-btn" src="img/payments/row-right.svg" alt="icon: row">
-                     <span class="user__lastpayments__item_card-number">•••• 5682</span>
-                     <img class="user__lastpayments__item_card-logo" src="img/payments/master.svg" alt="logo: mastercard">
-                   </li>
-                   <li class="user__lastpayments__item_date">
-                     27.01.2020 15:23
-                    </li>
-                   <li class="user__lastpayments__item_status">
-                     <img class="user__lastpayments__item_status-img" src="img/payments/sucsses.svg" alt="icon">
-                     <span class="user__lastpayments__item_status-text">Переведен</span>
-                   </li>
-                   <li class="user__lastpayments__item_sumback">
-                     2.00 BYN
-                   </li>
-                 </ul>
-                 <ul class="user__lastpayments__item">
-                   <li class="user__lastpayments__item_card">
-                     <img class="user__lastpayments__item_card-btn" src="img/payments/row-right.svg" alt="icon: row">
-                     <span class="user__lastpayments__item_card-number">•••• 3244</span>
-                     <img class="user__lastpayments__item_card-logo" src="img/payments/visa.svg" alt="logo: mastercard">
-                   </li>
-                   <li class="user__lastpayments__item_date">
-                     27.01.2020 13:09
-                    </li>
-                   <li class="user__lastpayments__item_status">
-                     <img class="user__lastpayments__item_status-img" src="img/payments/sucsses.svg" alt="icon">
-                     <span class="user__lastpayments__item_status-text">Переведен</span>
-                   </li>
-                   <li class="user__lastpayments__item_sumback">
-                     12.00 BYN
-                   </li>
-                 </ul>
-                 <ul class="user__lastpayments__item">
-                   <li class="user__lastpayments__item_card">
-                     <img class="user__lastpayments__item_card-btn" src="img/payments/row-right.svg" alt="icon: row">
-                     <span class="user__lastpayments__item_card-number">•••• 5682</span>
-                     <img class="user__lastpayments__item_card-logo" src="img/payments/master.svg" alt="logo: mastercard">
-                   </li>
-                   <li class="user__lastpayments__item_date">
-                     25.02.2020 10:02
-                    </li>
-                   <li class="user__lastpayments__item_status">
-                     <img class="user__lastpayments__item_status-img" src="img/payments/sucsses.svg" alt="icon">
-                     <span class="user__lastpayments__item_status-text">Переведен</span>
-                   </li>
-                   <li class="user__lastpayments__item_sumback">
-                     2.00 BYN
-                   </li>
-                 </ul>
-                 <ul class="user__lastpayments__item">
-                   <li class="user__lastpayments__item_card">
-                     <img class="user__lastpayments__item_card-btn" src="img/payments/row-right.svg" alt="icon: row">
-                     <span class="user__lastpayments__item_card-number">•••• 3244</span>
-                     <img class="user__lastpayments__item_card-logo" src="img/payments/visa.svg" alt="logo: mastercard">
-                   </li>
-                   <li class="user__lastpayments__item_date">
-                     23.01.2020 13:09
-                    </li>
-                   <li class="user__lastpayments__item_status">
-                     <img class="user__lastpayments__item_status-img" src="img/payments/offer.svg" alt="icon">
-                     <span class="user__lastpayments__item_status-text">Отменён</span>
-                   </li>
-                   <li class="user__lastpayments__item_sumback">
-                     2.00 BYN
-                   </li>
-                 </ul>
+                 
+                
                </div>
                <button class="user__lastpayments__button">Показать еще <img src="img/payments/row-down.svg" alt=""></button>
              </div>
+             <!-- /.user__lastpayments -->
              
           </div>
           <!-- /.user__card -->
@@ -788,19 +542,19 @@
          
         </div>
         <div class="footer__card">
-          <img src="img/logo-allcard/raschet.svg" alt="logo: creditcard">
-          <img src="img/logo-allcard/ipay.svg" alt="logo: creditcard">
-          <img src="img/logo-allcard/visa.svg" alt="logo: creditcard">
-          <img src="img/logo-allcard/mastercard.svg" alt="logo: creditcard">
-          <img src="img/logo-allcard/maestro.svg" alt="logo: creditcard">
-          <img src="img/logo-allcard/mir.svg" alt="logo: creditcard">
-          <img src="img/logo-allcard/mir3.svg" alt="logo: creditcard">
-          <img src="img/logo-allcard/qiwi-koshelek.svg" alt="logo: creditcard">
-          <img src="img/logo-allcard/yandex-money.svg" alt="logo: creditcard">
-          <img src="img/logo-allcard/paypal.svg" alt="logo: creditcard">
-          <img src="img/logo-allcard/webmoney.svg" alt="logo: creditcard">
-          <img src="img/logo-allcard/bepaid.svg" alt="logo: creditcard">
-          <img src="img/logo-allcard/rrb.svg" alt="logo: creditcard">
+          <img class="footer__card-image" src="img/logo-allcard/raschet.svg" alt="logo: creditcard">
+          <img class="footer__card-image" src="img/logo-allcard/ipay.svg" alt="logo: creditcard">
+          <img class="footer__card-image" src="img/logo-allcard/visa.svg" alt="logo: creditcard">
+          <img class="footer__card-image" src="img/logo-allcard/mastercard.svg" alt="logo: creditcard">
+          <img class="footer__card-image" src="img/logo-allcard/maestro.svg" alt="logo: creditcard">
+          <img class="footer__card-image" src="img/logo-allcard/mir.svg" alt="logo: creditcard">
+          <img class="footer__card-image" src="img/logo-allcard/mir3.svg" alt="logo: creditcard">
+          <img class="footer__card-image" src="img/logo-allcard/qiwi-koshelek.svg" alt="logo: creditcard">
+          <img class="footer__card-image" src="img/logo-allcard/yandex-money.svg" alt="logo: creditcard">
+          <img class="footer__card-image" src="img/logo-allcard/paypal.svg" alt="logo: creditcard">
+          <img class="footer__card-image" src="img/logo-allcard/webmoney.svg" alt="logo: creditcard">
+          <img class="footer__card-image" src="img/logo-allcard/bepaid.svg" alt="logo: creditcard">
+          <img class="footer__card-image" src="img/logo-allcard/rrb.svg" alt="logo: creditcard">
         </div>
         <div class="footer__bottom">
           <div class="footer__bottom-year">
@@ -814,5 +568,6 @@
         </div>
       </div>
     </footer>
+
 </body>
 </html>

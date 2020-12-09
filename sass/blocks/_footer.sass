@@ -73,3 +73,33 @@
       justify-content: space-between
     &-link
       margin-left: 20px
+
+@media  ( max-width: 1000px )
+  .footer
+    &__card
+      &-image
+        margin: 5px
+
+@media  ( max-width: 870px )
+  .footer
+    &__block
+      &__list
+        margin-bottom: 20px
+      &__logo
+        margin-right: 20px
+        margin-bottom: 20px
+    &__logo
+      &-text
+        min-width: 0
+
+@media  ( max-width: 630px )
+  .footer
+    &__bottom
+      flex-direction: column-reverse
+@media  ( max-width: 500px )
+  .footer
+    &__bottom
+      &-list
+        flex-direction: column
+      &-link
+        margin-bottom: 5px

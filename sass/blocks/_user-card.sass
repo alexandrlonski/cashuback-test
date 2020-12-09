@@ -19,9 +19,10 @@
         color: #FA6400
     &__sum
       display: flex
+      flex-wrap: wrap
       align-items: center
       padding: 23px 0 33px 0px
-      height: 118px
+      min-height: 118px
       width: 100%
       border: 1px solid #DFE1E5
       border-radius: 4px
@@ -74,3 +75,7 @@
         list-style: none
         background: url(../img/li-img.svg) no-repeat 0 5px
         padding-left: 12px
+@media  ( max-width: 870px )
+  .user
+    &__card
+      padding-left: 0
