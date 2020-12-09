@@ -50,7 +50,7 @@
     &__select
       &__card
         min-height: 98px
-        min-width: 100px
+        min-width: 285px
         padding: 10px
         margin-right: 16px
         margin-bottom: 20px
@@ -58,6 +58,25 @@
 @media  ( max-width: 700px )
   .user
     &__select
-      padding-left: 20px
+      padding-left: 10px
+      padding-right: 10px
       &__card
         min-height: 125px
+        margin: 10px auto
+      &__title
+        max-width: 330px
+        margin: auto
+
+@media  ( max-width: 400px )
+  .user
+    &__select
+      &__title
+        font-size: 18px
+        max-width: 250px
+
+@media  ( max-width: 370px )
+  .user
+    &__select
+      &__card
+        min-width: 90%
+        max-width: 90%

@@ -160,14 +160,10 @@
         &:hover
           color: #ffffff
           background: #FA6400
-
-@media  ( max-width: 420px )
+@media  ( max-width: 700px )
   .user
     &__form
-      &__input
-        width: 90%
-      &__button
-        width: 90%
+      padding-left: 24px
 
 @media  ( max-width: 678px )
   .user
@@ -180,3 +176,17 @@
       &__input
         &-sum
           margin-bottom: 10px
+
+@media  ( max-width: 420px )
+  .user
+    &__form
+      &__input
+        width: 90%
+        &-sum
+          width: 160px
+      &__button
+        width: 90%
+      &__title
+        font-size: 18px
+        width: 170px
+        margin: 13px auto
