@@ -177,8 +177,8 @@ validationUserForm();
 const showInfoCard = () => {
   const cards = document.querySelectorAll('.user__lastpayments__item'),
         parent = document.querySelector('.user__lastpayments__item-wrapper'),
-        statusText = document.querySelectorAll('.user__lastpayments__item_status-text'),
-        infoCard = document.createElement('div');
+        statusText = document.querySelectorAll('.user__lastpayments__item_status-text');
+      let infoCard = document.createElement('div');
         infoCard.className = 'user__lastpayments__info';
   
         parent.addEventListener('click', (e) => {
@@ -201,7 +201,6 @@ const showInfoCard = () => {
                 let status = item.children[2].textContent.toLowerCase();    
                     
                     if(status.trim() === 'переведен'){
-                      console.log(1);
                         status = 'принят и выплачен';
                     } else {
                       status = item.children[2].textContent.toLowerCase();
@@ -222,10 +221,12 @@ const showInfoCard = () => {
                
                  `;
               item.children[0].children[0].attributes.src.value = "img/payments/row-down.svg";
-            }else {
-               item.children[0].children[0].attributes.src.value = "img/payments/row-right.svg";
+              
+            }else  {
+              item.children[0].children[0].attributes.src.value = "img/payments/row-right.svg";
               statusText[i].classList.remove('black');
-              item.classList.remove('bg-active'); 
+              item.classList.remove('bg-active');
+              
             }
              
         });
